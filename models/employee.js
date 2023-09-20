@@ -5,8 +5,7 @@ module.exports = (sequelize, DataTypes) => {
     "Employee",
     {
       Id: {
-        type: DataTypes.UUID,
-        defaultValue: DataTypes.UUIDV4,
+        type: DataTypes.NUMBER,
         primaryKey: true,
       },
       DocumentNumber: {
@@ -24,6 +23,8 @@ module.exports = (sequelize, DataTypes) => {
       PhoneNumber: { type: DataTypes.STRING, allowNull: false },
       Email: { type: DataTypes.STRING, allowNull: false },
       Password: { type: DataTypes.STRING, allowNull: false },
+      Gender: { type: DataTypes.CHAR },
+      Active: { type: DataTypes.BOOLEAN },
     },
     {
       tableName: "Employees",
