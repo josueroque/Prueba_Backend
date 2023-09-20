@@ -5,13 +5,10 @@ const path = require("path");
 const Sequelize = require("sequelize");
 const basename = path.basename(__filename);
 
-// Configuración
-const config = require("../../config/database");
+const config = require("../server/Database/config");
 
-// Declaración de objeto DB
 const db = {};
 
-// Inicializar la conexión
 const sequelize = new Sequelize(
   config.database,
   config.username,
@@ -26,13 +23,14 @@ fs.readdirSync(__dirname)
     );
   })
   .forEach((file) => {
-    const model = sequelize["import"](path.join(__dirname, file));
+    const model = require(path.join(__dirname, file))(
+      sequelize,
+      Sequelize.DataTypes
+    );
 
-    // Cada modelo que hay en el directorio lo vinculamos a nuestro objeto DB
     db[model.name] = model;
   });
 
-// Realizar las asociaciones de los modelos
 Object.keys(db).forEach((modelName) => {
   if (db[modelName].associate) {
     db[modelName].associate(db);

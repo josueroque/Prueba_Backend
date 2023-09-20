@@ -1,7 +1,5 @@
 "use strict";
 
-const { NUMBER } = require("sequelize");
-
 module.exports = (sequelize, DataTypes) => {
   const Department = sequelize.define(
     "Department",
@@ -10,12 +8,12 @@ module.exports = (sequelize, DataTypes) => {
       Name: DataTypes.STRING,
     },
     {
-      tableName: "departments",
+      tableName: "Departments",
     }
   );
 
-  User.associate = function (models) {
-    User.hasmany(models.Position, {
+  Department.associate = function (models) {
+    Department.hasMany(models.Position, {
       as: "position",
       foreignKey: "DepartmentId",
     });
