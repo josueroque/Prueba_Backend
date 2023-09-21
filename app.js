@@ -13,8 +13,8 @@ var cors = require("cors");
 const auth = require("./authentication/authentication");
 var app = express();
 
-app.use(auth);
 app.use(cors());
+app.use(auth);
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));

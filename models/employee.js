@@ -25,6 +25,7 @@ module.exports = (sequelize, DataTypes) => {
       Password: { type: DataTypes.STRING, allowNull: false },
       Gender: { type: DataTypes.CHAR },
       Active: { type: DataTypes.BOOLEAN },
+      DeletedAt: { type: DataTypes.DATE },
     },
     {
       tableName: "Employees",

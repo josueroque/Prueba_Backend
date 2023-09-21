@@ -7,14 +7,26 @@ module.exports = {
         Id: req.params.id,
       },
     });
-    console.log(response);
+
+    return response;
+  },
+
+  async softDelete(req, res) {
+    const response = await Employee.update(
+      { Active: false, DeletedAt: req.body.deletedAt },
+      {
+        where: {
+          Id: 11,
+        },
+      }
+    );
     return response;
   },
 
   async update(req, res) {
     const response = await Employee.update(req.body.employee, {
       where: {
-        Id: req.params.id,
+        Id: req.body.employee.Id,
       },
     });
     return response;
@@ -59,8 +71,9 @@ module.exports = {
       ],
       include: {
         association: "position",
-        attributes: ["name"],
+        attributes: ["name", "id"],
       },
+      where: { active: true },
     });
     return employees;
   },

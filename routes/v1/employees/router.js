@@ -38,16 +38,15 @@ router.put("/employees/:id", async function (req, res) {
     const response = await employee.update(req, res);
     res.status(204).json(response);
   } catch (error) {
-    res.status(500).json({ message: "Something wrong happened!" });
+    res.status(500).json({ message: "Something wrong happened!", error });
   }
 });
 
 router.delete("/employees/:id", async function (req, res) {
   try {
-    const response = await employee.delete(req, res);
+    const response = await employee.softDelete(req, res);
     res.status(200).json({ rowsDeleted: response });
   } catch (error) {
-    console.log(error);
     res.status(500).json({ message: "Something wrong happened!" });
   }
 });
