@@ -10,9 +10,10 @@ var index = require("./routes/index");
 var usersRoutes = require("./routes/v1/users/router");
 const listEndpoints = require("express-list-endpoints");
 var cors = require("cors");
-
+const auth = require("./authentication/authentication");
 var app = express();
 
+app.use(auth);
 app.use(cors());
 
 // view engine setup
