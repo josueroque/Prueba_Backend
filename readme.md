@@ -29,3 +29,5 @@ Esto levantara la aplicacion en modo de desarrollo.
 La aplicacion correra en el puerto 3001.
 
 La ruta base del proyecto es: http://localhost:3001/api/v1
+
+Para hacer pruebas usar cualquiera de los usuarios guardados despues de ejecutar los comandos de sequalize.
