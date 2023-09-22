@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const employee = require("./controller/employees");
 const authentication = require("../../../authentication/authentication");
+const { validationMiddleware, employeeSchema } = require("./validation");
 
 router.get("/employees", async function (req, res) {
   const employees = await employee.listAll();
@@ -23,15 +24,19 @@ router.post("/employees/authenticate", async function (req, res) {
   }
 });
 
-router.post("/employees", async function (req, res) {
-  try {
-    const response = await employee.create(req, res);
-    res.status(201).json(response);
-  } catch (error) {
-    console.log(error);
-    res.status(500).json({ message: "Something wrong happened!" });
+router.post(
+  "/employees",
+  validationMiddleware(employeeSchema),
+  async function (req, res) {
+    try {
+      const response = await employee.create(req, res);
+      res.status(201).json(response);
+    } catch (error) {
+      console.log(error);
+      res.status(500).json({ message: "Something wrong happened!" });
+    }
   }
-});
+);
 
 router.put("/employees/:id", async function (req, res) {
   try {

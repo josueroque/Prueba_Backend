@@ -16,7 +16,7 @@ module.exports = {
       { Active: false, DeletedAt: req.body.deletedAt },
       {
         where: {
-          Id: 11,
+          Id: req.body.id,
         },
       }
     );
@@ -33,7 +33,7 @@ module.exports = {
   },
 
   async create(req, res) {
-    const response = await Employee.create(req.body.employee);
+    const response = await Employee.create(req.body);
     return response;
   },
 
