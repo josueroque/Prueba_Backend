@@ -6,13 +6,7 @@ Este repositorio corresponde unicamente a la parte de backend desarrollada con N
 
 Esto instalara todas las dependencias necesarias para ejecutar la aplicación.
 
-### Ejecutar `npx sequelize-cli db:migrate`
-
-Ejecutara todas las migraciones existentes y se creara la base de datos del proyecto.
-
-### Ejecutar `npx sequelize-cli db:seed:all`
-
-Esto generara la data de prueba con la que podra cargar la base de datos por primera vez.
+### Crear la base de datos 'ingenieriadigital' en el servidor mysql local.
 
 ### Se deberan configurar las siguientes variables de entorno:
 
@@ -21,6 +15,14 @@ DB_USER=
 DB_PASSWORD=  
 DB_DATABASE=  
 DB_PORT=
+
+### Ejecutar `npx sequelize-cli db:migrate`
+
+Ejecutara todas las migraciones existentes y se creara la base de datos del proyecto.
+
+### Ejecutar `npx sequelize-cli db:seed:all`
+
+Esto generara la data de prueba con la que podra cargar la base de datos por primera vez.
 
 ### Ejecutar `npm run dev`
 
