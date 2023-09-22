@@ -19,7 +19,7 @@ module.exports = (sequelize, DataTypes) => {
       foreignKey: "PositionId",
     });
     Position.belongsTo(models.Department, {
-      as: "PositionDepartment",
+      as: "Department",
       foreignKey: "DepartmentId",
     });
   };

@@ -7,7 +7,6 @@ require("dotenv").config();
 const sequelize = require("./server/Database/sequelizeConnection");
 
 var index = require("./routes/index");
-var usersRoutes = require("./routes/v1/users/router");
 const listEndpoints = require("express-list-endpoints");
 var cors = require("cors");
 const auth = require("./authentication/authentication");
