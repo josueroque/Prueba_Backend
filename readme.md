@@ -1,6 +1,4 @@
-# Desarrollo de Prueba Tecnica Ingenieria Digital
-
-## Available Scripts
+## Desarrollo de Prueba Tecnica Ingenieria Digital
 
 Este repositorio corresponde unicamente a la parte de backend desarrollada con Node.js. Para levantar el proyecto en su entorno local, ejecutar las siguientes acciones:
 
@@ -18,13 +16,13 @@ Esto generara la data de prueba con la que podra cargar la base de datos por pri
 
 ### Se deberan configurar las siguientes variables de entorno:
 
-DB_HOST=localhost
-DB_USER=
-DB_PASSWORD=
-DB_DATABASE=ingenieriadigital
+DB_HOST=  
+DB_USER=  
+DB_PASSWORD=  
+DB_DATABASE=  
 DB_PORT=
 
-### `npm run dev`
+### Ejecutar `npm run dev`
 
 Esto levantara la aplicacion en modo de desarrollo.
 
